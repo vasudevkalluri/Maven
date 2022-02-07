@@ -1,0 +1,19 @@
+node('Dev') {
+        stage('ContinuousDownload') {
+     git 'https://github.com/vasudevkalluri/Maven.git'
+}
+    stage('ContinuousBuild') {
+     sh 'mvn package'
+}
+    stage('ContinuousDeployment') {
+   sh 'scp /home/ubuntu/.jenkins/workspace/Master/webapp/target/webapp.war ubuntu@172.31.24.14:/var/lib/tomcat8/webapps/testapp.war'
+}
+    stage('ContinuousTesting') {
+    git 'https://github.com/vasudevkalluri/functional-testing.git'
+    sh 'java -jar /home/ubuntu/.jenkins/workspace/Master/testing.jar'
+
+}
+    stage('ContinuousDelivery') {
+   sh 'scp /home/ubuntu/.jenkins/workspace/Master/webapp/target/webapp.war ubuntu@172.31.19.108:/var/lib/tomcat8/webapps/Prodapp.war'
+}
+            }
