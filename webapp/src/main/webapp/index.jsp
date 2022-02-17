@@ -14,7 +14,7 @@
 <style>
 h1
 {
-  color:blue;
+  color:yellow;
   text-align:center;
 }
 h5
