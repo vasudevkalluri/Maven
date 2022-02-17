@@ -2,7 +2,7 @@
 <body>
 <h1>Welcome To Vasudev kalluri IT</h1>
 </body>
-<body style="color:green;">
+<body style="color:brown;">
  <div class="container">
     <label for="uname"><b>Username:    </b></label>
     <input type="text" placeholder="Enter Username" name="uname" required>
@@ -14,7 +14,7 @@
 <style>
 h1
 {
-  color:brown;
+  color:green;
   text-align:center;
 }
 h5
